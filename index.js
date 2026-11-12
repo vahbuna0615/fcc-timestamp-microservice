@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const app = express();
 
@@ -23,6 +23,15 @@ app.get("/api/:date", (req, res) => {
     res.json({unix: parseInt(req.params.date), utc: new Date(parseInt(req.params.date)).toUTCString()})
   }else {
     res.json ({error: 'Invalid Date'})
+  }
+})
+
+app.post("api/zip-boundary", (req, res) => {
+
+  return {
+    message: 'Working',
+    bearerToken: req.headers.authorization,
+    responseURL: 'http://localhost:8000'
   }
 })
 
