@@ -28,11 +28,11 @@ app.get("/api/:date", (req, res) => {
 
 app.post("api/zip-boundary", (req, res) => {
 
-  return {
+  return res.status(200).json({
     message: 'Working',
     bearerToken: req.headers.authorization,
     responseURL: 'http://localhost:8000'
-  }
+  })
 })
 
 const portNum = process.env.PORT || 5000
