@@ -26,7 +26,7 @@ app.get("/api/:date", (req, res) => {
   }
 })
 
-app.post("api/zip-boundary", (req, res) => {
+app.post("/api/zip-boundary", (req, res) => {
 
   return res.status(200).json({
     message: 'Working',
